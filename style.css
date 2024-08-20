@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+#container {
+    width: 70vh;
+    margin: 0 auto;
+    margin-top: 50px;
+    background-color: #070708;
+    border-color: #403f3d;
+}
+
+#active-player {
+    width: 90vh;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 100px;
+    background-color: black;
+    color: #cc2546;
+    text-align: center;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-size: 70px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.cell {
+    width: 45%;
+    height: 150px;
+    color: #cc2546;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    font-size: 70px;
+    text-align: center;
+    box-shadow: 1px 1px 10px 5px white;
+    border-color: #403f3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-div {
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.restart-btn {
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: black;
+    font-size: 50px;
+    color: #cc2546;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Permanent Marker", cursive;
+    font-weight: 400;
+    margin-top: 10px;
+}
