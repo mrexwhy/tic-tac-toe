@@ -79,6 +79,10 @@ const Gamecontroller = (function(playerX, playerY) {
     const switchPlayer = () => {
         activePlayer = activePlayer === players[0] ? players[1] : players[0];
 
+        if (getBoard !== '') {
+            return
+        }
+
     }
 
     const getActivePlayer = () => activePlayer;
@@ -132,6 +136,11 @@ const Gamecontroller = (function(playerX, playerY) {
 
 
     let playRound = (row, column, playerTurn) => {
+
+        if (getBoard[row][column].getValue() !== '') {
+            return;
+        }
+        
         board.addMark(row, column, getActivePlayer().mark);
        const result = checkWinner();
 
@@ -146,6 +155,7 @@ const Gamecontroller = (function(playerX, playerY) {
             switchPlayer();
             playerTurn.textContent = `${getActivePlayer().name}'s turn...`;
         }
+
     }
 
     return {
@@ -187,8 +197,11 @@ const screenController = (function(doc) {
     function clickHandler(e) {
         const selectedColumn = e.target.dataset.column;
         const selectedRow = e.target.dataset.row;
+        const board = game.getBoard;
+        const cell = board.getValue;
 
         if (!selectedColumn) return;
+        
         game.playRound(selectedRow, selectedColumn, playerTurn);
         updateScreen();
     }
